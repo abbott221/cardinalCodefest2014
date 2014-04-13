@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Unexpected Packet Grabber </title>
+		<link rel="stylesheet" type="text/css" href="requestPage.css">
+		<script>
+			function getCookie(cname)
+					{
+					var name = cname + "=";
+					var ca = document.cookie.split(';');
+					for(var i=0; i<ca.length; i++)
+					  {
+					  var c = ca[i].trim();
+					  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+					  }
+					return "Bloody hell";
+					}
+//Open tags= "%3C" Close tags="%3E" Space="+"  /="%2F"  ;="%3A" !="%21"
+			function processCookieOpenTags(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3C");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"<"+processCookieOpenTags(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieClosedTags(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3E");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+">"+processCookieClosedTags(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSlash(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3C");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"/"+processCookieSlash(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSemiColon(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3A");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+";"+processCookieSemiColon(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieExclamation(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%21");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"!"+processCookieExclamation(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSpace(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("+");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+" "+processCookieSpace(cookie.substring(index+1));
+				}
+				return result;
+				}
+
+			function cookieProcessor(cookie){
+			return processCookieSpace(
+				processCookieExclamation(
+					processCookieSemiColon(
+						processCookieSlash(
+							processCookieClosedTags(
+								processCookieOpenTags(
+									getCookie(cookie)
+								)
+							)
+						)
+					)
+				)
+			      );
+			}
+
+			
+		</script>
+	</head>
+	<body>
+		<img class = "header" src="footer.png">
+		<img class = "footer" src="footer.png">
+		<img class = "logo" src="logo.png">
+
+		<div class="getInfo">
+			<form action="getPatientData.php" method="get">
+					<select name="category">
+						  <option value="default" selected="selected"> Choose a category</option>
+						  <option value="GI">General Injuries</option>
+						  <option value="AL">Allergies</option>
+						  <option value="MED">Medication</option>
+						  <option value="CI">Chronic Conditions</option>
+					</select><br>
+					Patient: <textarea name="patient"></textarea>
+				<input type="submit" value="Get info">
+			</form>
+		</div>
+		<div class="chosen">
+			<h2>Chosen Conditions</h2>
+			<ul>
+			<script>
+				function getCookie(cname)
+					{
+					var name = cname + "=";
+					var ca = document.cookie.split(';');
+					for(var i=0; i<ca.length; i++)
+					  {
+					  var c = ca[i].trim();
+					  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+					  }
+					return "Bloody hell";
+					}
+//Open tags= "%3C" Close tags="%3E" Space="+"  /="%2F"  ;="%3A" !="%21"
+			function processCookieOpenTags(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3C");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"<"+processCookieOpenTags(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieClosedTags(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3E");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+">"+processCookieClosedTags(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSlash(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3C");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"/"+processCookieSlash(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSemiColon(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3A");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+";"+processCookieSemiColon(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieExclamation(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%21");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"!"+processCookieExclamation(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSpace(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("+");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+" "+processCookieSpace(cookie.substring(index+1));
+				}
+				return result;
+				}
+
+			function cookieProcessor(cookie){
+			return processCookieSpace(
+				processCookieExclamation(
+					processCookieSemiColon(
+						processCookieSlash(
+							processCookieClosedTags(
+								processCookieOpenTags(
+									getCookie(cookie)
+								)
+							)
+						)
+					)
+				)
+			      );
+			}
+				var categories = getCookie("categories");
+				document.write(categories);
+			</script>
+			</ul>
+			<script> function makePage()
+					{
+						newWindow = window.open();
+						newDocument = newWindow.document;
+						newDocument.write("<html><head><title>Patient Summary</title></head><body>"+cookieProcessor("all")+"</body></html>");
+					} 
+			function getCookie(cname)
+					{
+					var name = cname + "=";
+					var ca = document.cookie.split(';');
+					for(var i=0; i<ca.length; i++)
+					  {
+					  var c = ca[i].trim();
+					  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+					  }
+					return "Bloody hell";
+					}
+//Open tags= "%3C" Close tags="%3E" Space="+"  /="%2F"  ;="%3A" !="%21"
+			function processCookieOpenTags(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3C");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"<"+processCookieOpenTags(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieClosedTags(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3E");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+">"+processCookieClosedTags(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSlash(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3C");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"/"+processCookieSlash(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSemiColon(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%3A");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+";"+processCookieSemiColon(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieExclamation(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("%21");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+"!"+processCookieExclamation(cookie.substring(index+3));
+				}
+				return result;
+				}
+
+			function processCookieSpace(cookie)
+				{
+				var result = "";
+				var index=cookie.indexOf("+");
+				if(index>=0)
+				{
+					result = cookie.substring(0,index)+" "+processCookieSpace(cookie.substring(index+1));
+				}
+				return result;
+				}
+
+			function cookieProcessor(cookie){
+			return processCookieSpace(
+				processCookieExclamation(
+					processCookieSemiColon(
+						processCookieSlash(
+							processCookieClosedTags(
+								processCookieOpenTags(
+									getCookie(cookie)
+								)
+							)
+						)
+					)
+				)
+			      );
+			}</script>
+			<button class="new" type="button" onclick="makePage()">Make List</button>
+			
+		</div>
+		<div class="console"> <textarea class="console"></textarea></div>
+
+	</body>
+</html>

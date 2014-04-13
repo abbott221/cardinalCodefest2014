@@ -1,10 +1,11 @@
-
 <?php
     include 'globals.php';
 ?>
 
-
 <?php
+	//stuff lol comments
+	
+	
 	//create connection and store the data for later use
 	//host, username, password, dbname
 	$connect = mysqli_connect($host,$user,$pass, $db);
@@ -26,23 +27,10 @@
 			if ($row['password'] == $_POST['password'])
 			{
 				setcookie("uid", $row['uID'], time()+3600);
-				
-				header('Location: https://cin.kc8khl.net/cardinalCodefest2014/requestPage.html');
-				
-				//echo "Account successfully logged in";
+				echo "Account successfully logged in";
 			}
 			else
-			{
 				echo "Incorrect password";
-				
-				include 'login.html';
-			}
-		}
-		else
-		{
-			echo "Incorrect password";
-			
-			include 'login.html';
 		}
 	}
 	
