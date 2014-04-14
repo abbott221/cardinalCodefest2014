@@ -1,8 +1,10 @@
 <?php
 	include 'globals.php';
-?>
-
-<?php
+	include 'Functions.php';
+	
+	
+	
+	
 	
 	$connect = mysqli_connect($host,$user,$pass,$db);
 	
@@ -25,7 +27,6 @@
 	$result = mysqli_query($connect,$query);
 	//WHERE threadID = COOKIE[threadID]
 
-	
 	
 	
 	
@@ -60,6 +61,16 @@
 	    echo "</tr>";
 	}
 	echo "</table>\n";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 

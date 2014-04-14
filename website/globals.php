@@ -3,14 +3,14 @@
     //MODEL
     
     $host = 'localhost';
-    $user = 'androi91_root';
+    $user = 'root';
+    $pass = 'goRocks95';
+    $db = 'realForum';
     
-    //omited
-    $pass = '';
+    $websiteURL = "localhost";
+    //$websiteURL = "androidtesting.x10host.com";
     
-    $db = 'androi91_storedPosts';
-    
-    $postTable = "realForum_posts";
-    $userTable = "realForum_users";
-    $threadTable = "realForum_threads";
+    $userTable = "users";
+    $threadTable = "threads";
+    $postTable = "posts";
 ?>

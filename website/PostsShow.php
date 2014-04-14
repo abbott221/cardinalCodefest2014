@@ -61,6 +61,8 @@
 	
 	//@Debugging
 	//echo $_COOKIE[uID];
+	//include 'Functions.php';
+	//whatIsVisible();
 	
 	
 

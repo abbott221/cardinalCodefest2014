@@ -1,8 +1,9 @@
 <?php
 	include 'globals.php';
-?>
-
-<?php
+	include 'Functions.php';
+	
+	
+	
 	$connect = mysqli_connect($host,$user,$pass,$db);
 	
 	// Check connection
@@ -17,27 +18,14 @@
         
         
         
-        $threadCount = 0;
-        $sql="SELECT * FROM " . $threadTable;
-
-        if ($result = mysqli_query($connect,$sql))
-        {
-            // Return the number of rows in result set
-            $threadCount = mysqli_num_rows($result);
-            //printf("Result set has %d rows.\n",$rowcount);
-            // Free result set
-            
-            //wut?
-            mysqli_free_result($result);
-        }
-        
-        $threadCount += 1;
-        
-        
 	
 	
+	$threadCount = countThis($threadTable);
 	
 	
+	//$userCount = countThis($userTable);
+	
+	$postCount = countThis($postTable);
 	
         
 
@@ -65,30 +53,7 @@
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	$postCount = 0;
-        $sql="SELECT * FROM " . $postTable;
-        //$sql="SELECT * FROM " . $threadTable;
-
-        if ($result = mysqli_query($connect,$sql))
-        {
-            // Return the number of rows in result set
-            $postCount = mysqli_num_rows($result);
-            //printf("Result set has %d rows.\n",$rowcount);
-            // Free result set
-            
-            //wut?
-            mysqli_free_result($result);
-        }
-	
-	$postCount += 1;
-	
-	
+	//$postCount = countThis($postTable);
 	
 	
 	
@@ -111,6 +76,10 @@
 		}
 		
 	}
+	
+	
+	
+	
 	
 	
 	

@@ -1,5 +1,6 @@
 <?php
     include 'globals.php';
+    include 'Functions.php';
 ?>
 
 

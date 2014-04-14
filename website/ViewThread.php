@@ -36,7 +36,16 @@
 
 
 <!-- <a href="ViewHome.php">Return</a> -->
-<a href="http://androidtesting.x10host.com/ViewHome.php">Return</a>
+<!-- <a href="http://androidtesting.x10host.com/ViewHome.php">Return</a> -->
+
+<?php
+//$formCall = "PostsForm.php?tID=" . $_GET['tID'];
+echo "<a href=\"http://" . $websiteURL . "/ViewHome.php\">Return</a>";
+//<form method="post" action="PostsForm.php">
+?>
+
+
+
 
 
 </body>

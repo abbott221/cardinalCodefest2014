@@ -52,14 +52,19 @@
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
 	$sql = "INSERT INTO " . $postTable . " (threadID, postID, postContent, userID, userName)
 	VALUES
 	('$_GET[tID]', '$postCount', '$_POST[pContent]', '$_COOKIE[uID]', '$foundName');";
-
-
-
-
-
+	
+	
+	
 	$result = mysqli_query($connect, $sql);
 	
 	
@@ -69,12 +74,18 @@
 	    die('Error: ' . mysqli_error($connect));
 	}
 	//echo "1 record added";
-
+	
+	//$param = $_POST[pContent];
+	//makeNewPost( $param );
 	
 	
-
-
-
+	
+	
+	
+	
+	
+	
+	
 	
 	mysqli_close($connect);
 	

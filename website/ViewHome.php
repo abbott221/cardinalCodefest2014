@@ -21,7 +21,10 @@
     </div>
     
     
-    <?php include 'ThreadsShow.php'; ?>
+    <?php
+    include 'ThreadsShow.php';
+    
+    ?>
     
     
     
