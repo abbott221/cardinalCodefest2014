@@ -4,7 +4,7 @@
     
     $host = 'localhost';
     $user = 'root';
-    $pass = 'goRocks95';
+    $pass = '';
     $db = 'realForum';
     
     $websiteURL = "localhost";
