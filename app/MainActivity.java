@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
@@ -19,6 +20,17 @@ public class MainActivity extends ActionBarActivity {
 	
 	//NEW CONTENT BEGINS
 	
+	//TextView content;
+    //EditText fname, email, login, pass;
+    //String Name, Email, Login, Pass;
+    
+    EditText threadID, postContent, userID, userName;
+    Button submit;
+    
+    //NEW CONTENT ENDS
+	
+	
+	
 	Button button;
 	TextView textView;
 	//boolean changedText = false;
@@ -26,9 +38,11 @@ public class MainActivity extends ActionBarActivity {
 	
 	
 	String postsURL = "http://androidtesting.x10host.com/JSONposts.php";
+	String threadsURL = "http://androidtesting.x10host.com/JSONthreads.php";
 	
+	//similar to PostsForm.php
+	String targetURL = "http://androidtesting.x10host.com/JSONtarget.php";
 	
-	//NEW CONTENT ENDS
 	
 	
 
@@ -49,6 +63,62 @@ public class MainActivity extends ActionBarActivity {
         
         //NEW CONTENT BEGINS
         
+        
+        //threadID
+        //postContent
+        //userID
+        //userName
+        
+        //content    =   (TextView)findViewById( R.id.content );
+        //fname      =   (EditText)findViewById(R.id.name);
+        //email      =   (EditText)findViewById(R.id.email);
+        //login      =    (EditText)findViewById(R.id.loginname);
+        //pass       =   (EditText)findViewById(R.id.password);
+         
+         
+        //Button saveme=(Button)findViewById(R.id.save);
+        
+        
+        threadID     =   (EditText)findViewById( R.id.threadID );
+        postContent  =   (EditText)findViewById(R.id.postContent);
+        userID       =   (EditText)findViewById(R.id.userID);
+        userName     =   (EditText)findViewById(R.id.userName);
+        
+        submit       =   (Button)findViewById(R.id.submit);
+         
+         
+
+        
+        submit.setOnClickListener(new MyOnClickListener(this));
+        
+        /*
+        saveme.setOnClickListener(new Button.OnClickListener(){
+
+            public void onClick(View v)
+            {
+                try{
+                     
+                         // CALL GetText method to make post method call
+                        //GetText();
+                        
+                        
+                        JSONfunctions.postData();
+                        
+                 }
+                catch(Exception ex)
+                 {
+                    content.setText(" url exeption! " );
+                 }
+            }
+        });
+        */
+        
+        //NEW CONTENT ENDS
+        
+        
+        
+        
+        
         button = (Button) findViewById(R.id.button1);
         
         //The MyOnClickListener Class is also new content JSYK
@@ -56,7 +126,6 @@ public class MainActivity extends ActionBarActivity {
         
         textView = (TextView) findViewById(R.id.textView1);
         
-        //NEW CONTENT ENDS
         
         
         
